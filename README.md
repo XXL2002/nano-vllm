@@ -21,6 +21,16 @@ A lightweight vLLM implementation built from scratch.
 ```bash
 pip install git+https://github.com/GeeeekExplorer/nano-vllm.git
 ```
+->
+```bash
+# PyTorch: 2.8.0+cu128
+# CUDA: 12.8
+# GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+# CUDA available: True
+# https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3.post2/flash_attn-2.8.3.post2%2Bcu12torch2.8cxx11abiTRUE-cp312-cp312-linux_x86_64.whl
+pip install ./flash_attn-2.8.3.post2+cu12torch2.8cxx11abiTRUE-cp312-cp312-linux_x86_64.whl
+pip install git+https://github.com/GeeeekExplorer/nano-vllm.git --no-build-isolation
+```
 
 ## Model Download
 
@@ -29,6 +39,11 @@ To download the model weights manually, use the following command:
 huggingface-cli download --resume-download Qwen/Qwen3-0.6B \
   --local-dir ~/huggingface/Qwen3-0.6B/ \
   --local-dir-use-symlinks False
+```
+->
+```bash
+hf download Qwen/Qwen3-0.6B \
+  --local-dir ~/huggingface/Qwen3-0.6B/
 ```
 
 ## Quick Start
